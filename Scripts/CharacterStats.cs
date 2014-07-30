@@ -15,6 +15,10 @@ public class CharacterStats : MonoBehaviour {
 	public bool jumping = false;
 	public bool crouching = false;
 	
+	// Runtime rycastInfo
+	public RaycastHit raycastInfo;
+	public bool raycastPosetive = false;
+	
 	// Stats
 	public float moveSpeed = 10f;
 	public float runFactor = 2f;
