@@ -3,13 +3,8 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public CharacterStats characterTarget;
+	public GameControlMode controlMode = GameControlMode.FirstPerson;
 }
+
+public enum GameControlMode {FirstPerson, ThirdPerson, Tactical}

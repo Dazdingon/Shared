@@ -3,16 +3,28 @@ using System.Collections;
 
 public class FPS_ViewInput : MonoBehaviour {
 	
-	public CharacterStats stats;
+	public PlayerStats player;
 	public Vector2 inputSpeed = Vector2.one;
 	
+	private CharacterStats stats;
 	private Vector2 lookInput;
 	
 	void Update () {
 	
-		LockScreen();
-		GetInput();
-		SetViewAngels();
+		// Only run if FirstPerson mode
+		if(player.controlMode == GameControlMode.FirstPerson){
+		
+			// Get stats, return if no characterTarget
+			stats = player.characterTarget;	if(!stats)return;
+			
+			LockScreen();
+			GetInput();
+			
+			if(Screen.lockCursor){
+				
+				SetViewAngels();
+			}
+		}
 	}
 	
 	// GetInput

@@ -1,24 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FPS_MovementInput : MonoBehaviour {
+public class FPS_ActionInput : MonoBehaviour {
 	
 	public PlayerStats player;
 	
 	private CharacterStats stats;
-	private Vector3 moveDirection;
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 		// Only run if FirstPerson mode
 		if(player.controlMode == GameControlMode.FirstPerson){
-
+			
 			// Get stats, return if no characterTarget
 			stats = player.characterTarget;	if(!stats)return;
 			
@@ -27,12 +21,20 @@ public class FPS_MovementInput : MonoBehaviour {
 	}
 	
 	private void GetInput () {
+
+		stats.jumping = Input.GetKey(KeyCode.Space);
 		
-		moveDirection.x = Input.GetAxis("Horizontal");
-		moveDirection.y = 0;
-		moveDirection.z = Input.GetAxis("Vertical");
+		stats.running = (
 		
-		stats.moveVector = Quaternion.Euler(0, stats.viewAngles.x, 0) * moveDirection;
-		//stats.moveVector = stats.transformInfo.TransformDirection(moveDirection);
+			Input.GetKey(KeyCode.LeftShift) ||
+			Input.GetKey(KeyCode.RightShift)
+		);
+		
+		stats.crouching = (
+	
+			Input.GetKey(KeyCode.LeftControl) ||
+			Input.GetKey(KeyCode.RightControl) ||
+			Input.GetKey(KeyCode.C)
+		);
 	}
 }
