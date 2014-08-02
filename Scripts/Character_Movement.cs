@@ -35,7 +35,7 @@ public class Character_Movement : MonoBehaviour {
 	
 	void CheckJump () {
 		
-		if(stats.jumping){
+		if(stats.input_Jump){
 			
 			stats.forceVector.y = stats.jumpForce;
 		}
@@ -46,7 +46,7 @@ public class Character_Movement : MonoBehaviour {
 		movement = Vector3.ClampMagnitude(stats.moveVector, 1f);
 		movement *= stats.moveSpeed;
 		
-		if(stats.running){
+		if(stats.input_Run){
 			
 			movement *= stats.runFactor;
 		}

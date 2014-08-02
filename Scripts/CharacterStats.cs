@@ -16,6 +16,7 @@ public class CharacterStats : MonoBehaviour {
 	public float runFactor = 2f;
 	public float jumpForce = 10f;
 	public float fallSpeed = 10f;
+	public float eyeHeight = 2f;
 	
 //		-	Runtime	-
 	
@@ -24,9 +25,10 @@ public class CharacterStats : MonoBehaviour {
 	[HideInInspector] public Vector3 moveVector;
 	[HideInInspector] public Vector3 forceVector;
 	
-	[HideInInspector] public bool running = false;
-	[HideInInspector] public bool jumping = false;
-	[HideInInspector] public bool crouching = false;
+	[HideInInspector] public bool input_Use = false;
+	[HideInInspector] public bool input_Run = false;
+	[HideInInspector] public bool input_Jump = false;
+	[HideInInspector] public bool input_Crouch = false;
 	
 	// Runtime rycastInfo
 	public RaycastHit raycastInfo;

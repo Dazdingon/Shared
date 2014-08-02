@@ -4,11 +4,10 @@ using System.Collections;
 public class FPS_CameraToView : MonoBehaviour {
 	
 	public PlayerStats player;
-	public Vector3 cameraOffset;
-	
 	public Transform cameraTransform;
 	
 	private CharacterStats stats;
+	private Vector3 cameraOffset;
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,6 +25,7 @@ public class FPS_CameraToView : MonoBehaviour {
 	// RotateCamera
 	void RotateCamera () {
 	
+		cameraOffset = new Vector3(0, stats.eyeHeight, 0);
 		cameraTransform.rotation = Quaternion.Euler(stats.viewAngles.y, stats.viewAngles.x, 0);
 		cameraTransform.position = stats.transformInfo.position + cameraOffset;
 	}

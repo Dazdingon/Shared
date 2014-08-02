@@ -6,7 +6,6 @@ public class Character_Raycast : MonoBehaviour {
 	public CharacterStats stats;
 	public LayerMask layerMask;
 	public float castDistance = 50f;
-	public Vector3 castOffset;
 	
 	private bool castPosetive;
 	private Ray ray;
@@ -34,7 +33,7 @@ public class Character_Raycast : MonoBehaviour {
 	
 	void CastRay () {
 	
-		ray.origin = stats.transformInfo.position + castOffset;
+		ray.origin = stats.transformInfo.position + new Vector3(0, stats.eyeHeight, 0);
 		ray.direction = Quaternion.Euler(stats.viewAngles.y, stats.viewAngles.x, 0) * Vector3.forward;
 
 		

@@ -21,16 +21,18 @@ public class FPS_ActionInput : MonoBehaviour {
 	}
 	
 	private void GetInput () {
-
-		stats.jumping = Input.GetKey(KeyCode.Space);
 		
-		stats.running = (
+		stats.input_Use = Input.GetKey(KeyCode.E);
+		
+		stats.input_Jump = Input.GetKey(KeyCode.Space);
+		
+		stats.input_Run = (
 		
 			Input.GetKey(KeyCode.LeftShift) ||
 			Input.GetKey(KeyCode.RightShift)
 		);
 		
-		stats.crouching = (
+		stats.input_Crouch = (
 	
 			Input.GetKey(KeyCode.LeftControl) ||
 			Input.GetKey(KeyCode.RightControl) ||
