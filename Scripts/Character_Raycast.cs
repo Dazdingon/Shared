@@ -11,23 +11,15 @@ public class Character_Raycast : MonoBehaviour {
 	private Ray ray;
 	private RaycastHit hitInfo;
 
-	public KeyCode interactKey = KeyCode.E;
-	private GameObject crosshairHand; 
-	private GameObject crosshairRadial;
-	private float interactDistance = 3f;
-
 	void Start()
 	{
-		crosshairHand = GameObject.Find("Crosshair_Hand");
-		crosshairRadial = GameObject.Find("Crosshair_Radial");
+
 	}
 
 	// Update is called once per frame
 	void Update () {
 	
-		CastRay();
-		interactionHandler(castPosetive, hitInfo, crosshairHand, crosshairRadial);
-		
+		CastRay();			
 
 	}
 	
@@ -41,32 +33,5 @@ public class Character_Raycast : MonoBehaviour {
 		
 		stats.raycastPosetive = castPosetive;
 		stats.raycastInfo = hitInfo;
-	}
-
-	void interactionHandler(bool castPosetive ,RaycastHit hitInfo, GameObject crosshairA, GameObject crosshairB)
-	{
-		if(!castPosetive)
-		{
-			crosshairA.renderer.enabled = false;
-			crosshairB.renderer.enabled = true;
-		}
-		else if (hitInfo.transform.gameObject.GetComponent ("ResourceObj") && hitInfo.distance < interactDistance)
-		{
-			crosshairA.renderer.enabled = true;
-			crosshairB.renderer.enabled = false;
-
-			if(Input.GetKeyDown(interactKey))
-			{
-				ResourceObj resObject = (ResourceObj)hitInfo.transform.gameObject.GetComponent("ResourceObj");
-				Resource newRes = resObject.getResource();
-				Destroy (hitInfo.transform.gameObject);
-				print ("Theoretically you now have this new resource: " + newRes.resourceType);
-			}
-		}
-		else
-		{
-			crosshairA.renderer.enabled = false;
-			crosshairB.renderer.enabled = true;
-		}
 	}
 }

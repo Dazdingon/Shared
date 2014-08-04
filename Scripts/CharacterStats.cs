@@ -17,6 +17,7 @@ public class CharacterStats : MonoBehaviour {
 	public float jumpForce = 10f;
 	public float fallSpeed = 10f;
 	public float eyeHeight = 2f;
+	public float interactDistance = 3f;
 	
 //		-	Runtime	-
 	

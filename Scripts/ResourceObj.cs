@@ -5,6 +5,7 @@ public class ResourceObj : MonoBehaviour {
 	
 	public string objType = "";
 	public string resourceType;	
+	public InteractionMode inteactionMode;
 	public int resourceQty;
 	
 	void Start()
@@ -31,3 +32,5 @@ public class ResourceObj : MonoBehaviour {
 		return res;
 	}
 }
+
+public enum InteractionMode {Breakable, Harvestable, Pickupable}
