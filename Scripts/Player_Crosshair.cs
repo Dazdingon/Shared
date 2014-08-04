@@ -32,11 +32,15 @@ public class Player_Crosshair : MonoBehaviour {
 
 	void interactionCrosshairHandler(bool castPosetive ,RaycastHit hitInfo)
 	{
-		if(castPosetive)
+		if(castPosetive && hitInfo.transform)
 		{
-			if (hitInfo.transform.gameObject.GetComponent ("ResourceObj") && hitInfo.distance <= interactDistance)
+			resObj = (ResourceObj)hitInfo.transform.GetComponent<ResourceObj>();
+			
+			Debug.Log ((resObj == null));
+			
+			if (resObj && hitInfo.distance <= interactDistance)
 			{
-				resObj = (ResourceObj)hitInfo.transform.gameObject.GetComponent ("ResourceObj");
+				
 
 				switch(resObj.inteactionMode)
 				{

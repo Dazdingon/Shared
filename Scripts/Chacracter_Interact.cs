@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Chacracter_Interact : MonoBehaviour {
 
-	public PlayerStats player;
+	public CharacterStats character;
 	private float interactDistance;
 
 	private bool input_use;
@@ -19,10 +19,10 @@ public class Chacracter_Interact : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		castPosetive = player.characterTarget.raycastPosetive;
-		hitInfo = player.characterTarget.raycastInfo;
-		input_use = player.characterTarget.input_Use;
-		interactDistance = player.characterTarget.interactDistance;
+		castPosetive = character.raycastPosetive;
+		hitInfo = character.raycastInfo;
+		input_use = character.input_Use;
+		interactDistance = character.interactDistance;
 
 		inteactionHandler(castPosetive, hitInfo, input_use);	
 	}
