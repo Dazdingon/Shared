@@ -24,7 +24,6 @@ public class Chacracter_Interact : MonoBehaviour {
 		input_use = player.characterTarget.input_Use;
 		interactDistance = player.characterTarget.interactDistance;
 
-
 		inteactionHandler(castPosetive, hitInfo, input_use);	
 	}
 

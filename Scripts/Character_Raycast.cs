@@ -11,11 +11,6 @@ public class Character_Raycast : MonoBehaviour {
 	private Ray ray;
 	private RaycastHit hitInfo;
 
-	void Start()
-	{
-
-	}
-
 	// Update is called once per frame
 	void Update () {
 	
