@@ -11,7 +11,7 @@ public class Player_Crosshair : MonoBehaviour {
 	public GameObject crosshairHand; 
 	public GameObject crosshairRadial;
 
-	private ResourceObj resObj;
+	private ResourceStats resObj;
 	private RaycastHit hitInfo;
 	private bool castPosetive;
 
@@ -34,9 +34,7 @@ public class Player_Crosshair : MonoBehaviour {
 	{
 		if(castPosetive && hitInfo.transform)
 		{
-			resObj = (ResourceObj)hitInfo.transform.GetComponent<ResourceObj>();
-			
-			Debug.Log ((resObj == null));
+			resObj = (ResourceStats)hitInfo.transform.GetComponent<ResourceStats>();
 			
 			if (resObj && hitInfo.distance <= interactDistance)
 			{

@@ -7,7 +7,7 @@ public class Character_Interact : MonoBehaviour {
 	private float interactDistance;
 
 	private bool input_use;
-	private ResourceObj resObj;
+	private ResourceStats resObj;
 	private RaycastHit hitInfo;
 	private bool castPosetive;
 
@@ -32,23 +32,22 @@ public class Character_Interact : MonoBehaviour {
 
 		if(castPosetive)
 		{
-			print ("Cast postitive: " + castPosetive.ToString());
-			if(hitInfo.transform.gameObject.GetComponent("ResourceObj"))
-			{
-				ResourceObj resObj = (ResourceObj)hitInfo.transform.gameObject.GetComponent("ResourceObj");
+			ResourceStats resObj = (ResourceStats)hitInfo.transform.GetComponent<ResourceStats>();
 
+			if(resObj)
+			{
 				if(input_use && hitInfo.distance <= interactDistance)
 				{
 					switch(resObj.inteactionMode)
 					{
 					case InteractionMode.Breakable:
-						Resource newRes = resObj.getResource();
-						Destroy (hitInfo.transform.gameObject);
-						print ("Theoretically you now have this new resource: " + newRes.resourceType);
+						print ("You've broken that object");
 						break;
 
 					case InteractionMode.Pickupable:
-						print ("Pick Up");
+						Resource newRes = resObj.getResource();
+						Destroy (hitInfo.transform.gameObject);
+						print ("Theoretically you now have this new resource: " + newRes.resourceType);
 						break;					
 					}
 				}

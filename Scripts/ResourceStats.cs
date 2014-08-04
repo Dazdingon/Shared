@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ResourceObj : MonoBehaviour {
+public class ResourceStats : MonoBehaviour {
 	
 	public string objType = "";
 	public string resourceType;	
