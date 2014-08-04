@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Chacracter_Interact : MonoBehaviour {
+public class Character_Interact : MonoBehaviour {
 
 	public CharacterStats character;
 	private float interactDistance;
