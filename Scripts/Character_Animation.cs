@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Character_Animation : MonoBehaviour {
 
-	// Use this for initialization
+	public CharacterStats stats;
+	
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
