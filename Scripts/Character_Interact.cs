@@ -41,13 +41,12 @@ public class Character_Interact : MonoBehaviour {
 					switch(resObj.inteactionMode)
 					{
 					case InteractionMode.Breakable:
-						print ("You've broken that object");
+						resObj.breakDown();
 						break;
 
 					case InteractionMode.Pickupable:
-						Resource newRes = resObj.getResource();
+						resObj.pickUp();
 						Destroy (hitInfo.transform.gameObject);
-						print ("Theoretically you now have this new resource: " + newRes.resourceType);
 						break;					
 					}
 				}

@@ -22,7 +22,7 @@ public class FPS_ActionInput : MonoBehaviour {
 	
 	private void GetInput () {
 		
-		stats.input_Use = Input.GetKey(KeyCode.E);
+		stats.input_Use = Input.GetKeyDown(KeyCode.E);
 		
 		stats.input_Jump = Input.GetKey(KeyCode.Space);
 		

@@ -3,34 +3,26 @@ using System.Collections;
 
 public class ResourceStats : MonoBehaviour {
 	
-	public string objType = "";
-	public string resourceType;	
+	public ResourceObjType objType;
+	public GameObject resourceReplacement;	
 	public InteractionMode inteactionMode;
-	public int resourceQty;
-	
-	void Start()
+	public SpriteRenderer resourceIcon;
+
+	public void breakDown()
 	{
-		objType = this.gameObject.name;
-		
-		switch (objType) 
-		{
-		case "Tree":	
-			resourceType = "Wood";
-			resourceQty = 5;
-			break;
-			
-		case "Rock":
-			resourceType = "Stone";
-			resourceQty = 2;
-			break;
-		}
+		GameObject.Instantiate (resourceReplacement, this.gameObject.transform.position, this.gameObject.transform.rotation);
+		GameObject.Destroy (this.gameObject);
 	}
-	
-	public Resource getResource()
+
+	public void pickUp()
 	{
-		Resource res = new Resource (resourceType, resourceQty);
-		return res;
+		print ("Theortically you now have this resource: " + objType.ToString ());
+		//resourceIcon.enabled = true;
+		GameObject.Destroy (this.gameObject);
 	}
+
 }
 
 public enum InteractionMode {Breakable, Harvestable, Pickupable}
+
+public enum ResourceObjType{Tree, LargeRock, SmallRock}
