@@ -46,7 +46,7 @@ public class Character_Interact : MonoBehaviour {
 
 					case InteractionMode.Pickupable:
 						resObj.pickUp();
-						Destroy (hitInfo.transform.gameObject);
+						character.inventoryResObj = resObj.objType;
 						break;					
 					}
 				}

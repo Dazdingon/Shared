@@ -10,7 +10,10 @@ public class CharacterStats : MonoBehaviour {
 	
 	// Stats - Combat
 	public CappedStat health = new CappedStat(10f);
-	
+
+	//Resource
+	public ResourceObjType inventoryResObj;
+
 	// Stats - Movement
 	public float moveSpeed = 10f;
 	public float runFactor = 2f;

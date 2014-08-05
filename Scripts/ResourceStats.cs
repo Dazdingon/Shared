@@ -10,6 +10,7 @@ public class ResourceStats : MonoBehaviour {
 
 	public void breakDown()
 	{
+		if(resourceReplacement)
 		GameObject.Instantiate (resourceReplacement, this.gameObject.transform.position, this.gameObject.transform.rotation);
 		GameObject.Destroy (this.gameObject);
 	}
@@ -25,4 +26,4 @@ public class ResourceStats : MonoBehaviour {
 
 public enum InteractionMode {Breakable, Harvestable, Pickupable}
 
-public enum ResourceObjType{Tree, LargeRock, SmallRock}
+public enum ResourceObjType{None, LargeTree, LargeRock, SmallRock}
