@@ -21,6 +21,7 @@ public class CharacterTest_Dwarf : MonoBehaviour {
 	private void RunToPoint () {
 	
 		direction = targetPoints[targetIndex] - stats.transformInfo.position;
+		direction.y = 0f;
 		
 		stats.moveVector = direction;
 		

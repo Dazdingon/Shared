@@ -35,6 +35,12 @@ ModelImporter:
     4300006: RockRigid_Small
     4300008: Rock_small
     4300010: Rock_Large
+    6400000: Rock_Large
+    6400002: Rock_small
+    6400004: RockRigid_Half1
+    6400006: RockRigid_Half2
+    6400008: RockRigid_Small
+    6400010: RockRigid_Whole
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -58,7 +64,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
