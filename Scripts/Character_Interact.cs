@@ -9,28 +9,22 @@ public class Character_Interact : MonoBehaviour {
 	private bool input_use;
 	private ResourceStats resObj;
 	private RaycastHit hitInfo;
-	private bool castPosetive;
+	private bool castPositive;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
 	void Update () {
 
-		castPosetive = character.raycastPosetive;
+		castPositive = character.raycastPositive;
 		hitInfo = character.raycastInfo;
 		input_use = character.input_Use;
 		interactDistance = character.interactDistance;
 
-		inteactionHandler(castPosetive, hitInfo, input_use);	
+		HandleInteaction();	
 	}
 
-	void inteactionHandler(bool castPositive, RaycastHit hitInfo, bool input_use)
+	private void HandleInteaction()
 	{
 
-		if(castPosetive)
+		if(castPositive)
 		{
 			ResourceStats resObj = (ResourceStats)hitInfo.transform.GetComponent<ResourceStats>();
 

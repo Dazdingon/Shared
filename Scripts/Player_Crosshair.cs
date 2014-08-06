@@ -13,26 +13,20 @@ public class Player_Crosshair : MonoBehaviour {
 
 	private ResourceStats resObj;
 	private RaycastHit hitInfo;
-	private bool castPosetive;
+	private bool castPositive;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
 	void Update () {
 
 		hitInfo = player.characterTarget.raycastInfo;
-		castPosetive = player.characterTarget.raycastPosetive;
+		castPositive = player.characterTarget.raycastPositive;
 		interactDistance = player.characterTarget.interactDistance;
-		interactionCrosshairHandler(castPosetive, hitInfo);
+		interactionCrosshairHandler(castPositive, hitInfo);
 	
 	}
 
-	void interactionCrosshairHandler(bool castPosetive ,RaycastHit hitInfo)
+	void interactionCrosshairHandler(bool castPositive ,RaycastHit hitInfo)
 	{
-		if(castPosetive && hitInfo.transform)
+		if(castPositive && hitInfo.transform)
 		{
 			resObj = (ResourceStats)hitInfo.transform.GetComponent<ResourceStats>();
 			

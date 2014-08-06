@@ -24,7 +24,7 @@ public class Character_ObjectPlacing : MonoBehaviour {
 			placeableInstance = objectInstance.GetComponentInChildren<PlaceableObject>();
 		}
 		
-		if(stats.raycastPosetive){
+		if(stats.raycastPositive){
 			
 			if(stats.raycastInfo.distance < stats.interactDistance && stats.raycastInfo.point.y < 0.1f){
 

@@ -13,7 +13,7 @@ public class CharacterStats : MonoBehaviour {
 
 	//Resource
 	public ResourceObjType inventoryResObj;
-
+	
 	// Stats - Movement
 	public float moveSpeed = 10f;
 	public float runFactor = 2f;
@@ -36,5 +36,5 @@ public class CharacterStats : MonoBehaviour {
 	
 	// Runtime rycastInfo
 	public RaycastHit raycastInfo;
-	public bool raycastPosetive = false;
+	public bool raycastPositive = false;
 }
