@@ -6,16 +6,11 @@ public class PlaceableObject : MonoBehaviour {
 	public GameObject placementObject;
 	public GameObject placeableTemplate;
 	
-	public Renderer renderTarget;
-	public Color color_Placeable = Color.white;
-	public Color color_Unplaceable = Color.white;
-	
-	public bool isPlaceable = false;
-	
+	public CollisionDetector detector;
 
 	public void PlaceObject () {
 		
-		if(isPlaceable){
+		if(detector.emptySpace){
 			
 			Transform newInstance;
 				
@@ -23,30 +18,28 @@ public class PlaceableObject : MonoBehaviour {
 			newInstance.position = placementObject.transform.position;
 			newInstance.rotation = placementObject.transform.rotation;
 		}
-	}
+	}	
 	
-
+	// Rendering
+	
+	public Renderer renderTarget;
+	public Color color_Placeable = Color.white;
+	public Color color_Unplaceable = Color.white;
+	
+	private int index;
+	
 	void Update () {
 	
-		if(isPlaceable){
+		for (index = 0; index < renderTarget.materials.Length; index++) {
 			
-			renderTarget.material.color = color_Placeable;
-		}
-		else {
+			if(detector.emptySpace){
 			
-			renderTarget.material.color = color_Unplaceable;
+				renderTarget.materials[index].color = color_Placeable;
+			}
+			else {
+				
+				renderTarget.materials[index].color = color_Unplaceable;
+			}
 		}
-		//this.collider.rigidbody.WakeUp();
-	}
-	
-	void FixedUpdate () {
-		
-		isPlaceable = true;
-	}
-	
-	//void OnTriggerStay(Collider other) {
-	void OnTriggerStay() {
-	
-		isPlaceable = false;
 	}
 }

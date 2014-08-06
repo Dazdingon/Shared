@@ -5,59 +5,103 @@ public class Character_ObjectPlacing : MonoBehaviour {
 	
 	public CharacterStats stats;
 	
-	public PlaceableObject[] placeableObjects;
+	public GameObject placeable_WoodPile;
+	public GameObject placeable_StonePile;
 	
-	public PlaceableObject placeableInstance;
+	private Transform displayObject;
 	
-	private Transform objectInstance;
 	private float angleOffset = 90f;
 	
-	void Start () {
+	private bool isPlaceable;
 	
-	}
-
 	void Update () {
 	
-		if(!objectInstance){
+		if(!displayObject){
 			
-			objectInstance = ((GameObject)(GameObject.Instantiate(placeableObjects[0].placementObject))).transform;
-			placeableInstance = objectInstance.GetComponentInChildren<PlaceableObject>();
+			CreateDisplayObject();
 		}
 		
-		if(stats.raycastPositive){
+		if(stats.raycastPositive && stats.inventoryResObj != ResourceObjType.None){
 			
 			if(stats.raycastInfo.distance < stats.interactDistance && stats.raycastInfo.point.y < 0.1f){
 
-				ShowPalceable();
+				isPlaceable = true;
 			}
 			else{
 				
-				HidePalceable();
+				isPlaceable = false;
 			}
 		}
 		else{
 			
-			HidePalceable();
+			isPlaceable = false;
 		}
 		
 		angleOffset += Input.GetAxis("Mouse ScrollWheel") * 90f;
-	}
-	
-	void ShowPalceable () {
-	
-		objectInstance.position = stats.raycastInfo.point;
-		objectInstance.rotation = Quaternion.Euler(0, stats.viewAngles.x + angleOffset, 0);
 		
-		if(stats.input_Use){
+	if(!displayObject)return;
+		
+		if(isPlaceable){
 			
-			stats.input_Use = false;
-			placeableInstance.PlaceObject();
-			stats.inventoryResObj = ResourceObjType.None;
+			ShowDisplayObject();
+			
+			if(stats.input_Use){
+			
+				PlaceObject();
+			}
+		}
+		else{
+			
+			HideDisplayObject();
 		}
 	}
 	
-	void HidePalceable () {
+	private void PlaceObject () {
+		
+		PlaceableObject componentPlaceable;
+		
+		componentPlaceable = displayObject.GetComponentInChildren<PlaceableObject>();
+		stats.input_Use = false;
 	
-		objectInstance.position = Vector3.down * 5f;
+		if(componentPlaceable.detector.emptySpace){
+			
+			componentPlaceable.PlaceObject();
+			stats.inventoryResObj = ResourceObjType.None;
+			RemoveDisplayObject();
+		}
+	}
+	
+	private void CreateDisplayObject () {
+	
+		GameObject prefabTemplate = null;
+		
+		if(stats.inventoryResObj == ResourceObjType.Wood){
+				
+			prefabTemplate = placeable_WoodPile;
+		}
+		else if(stats.inventoryResObj == ResourceObjType.Stone){
+			
+			prefabTemplate = placeable_StonePile;
+		}
+		
+		if(prefabTemplate){
+			
+			displayObject = ((GameObject)GameObject.Instantiate(prefabTemplate)).transform;
+		}
+	}
+	private void RemoveDisplayObject () {
+	
+		GameObject.Destroy(displayObject.gameObject);
+	}
+	
+	private void ShowDisplayObject () {
+	
+		displayObject.position = stats.raycastInfo.point;
+		displayObject.rotation = Quaternion.Euler(0, stats.viewAngles.x + angleOffset, 0);
+	}
+	
+	private void HideDisplayObject () {
+	
+		displayObject.position = Vector3.down * 5f;
 	}
 }
