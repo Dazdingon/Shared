@@ -48,8 +48,9 @@ public class Character_ObjectPlacing : MonoBehaviour {
 		objectInstance.position = stats.raycastInfo.point;
 		objectInstance.rotation = Quaternion.Euler(0, stats.viewAngles.x + angleOffset, 0);
 		
-		if(Input.GetMouseButtonDown(0)){
+		if(stats.input_Use){
 			
+			stats.input_Use = false;
 			placeableInstance.PlaceObject();
 		}
 	}
