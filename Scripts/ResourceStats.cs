@@ -6,24 +6,22 @@ public class ResourceStats : MonoBehaviour {
 	public ResourceObjType objType;
 	public GameObject resourceReplacement;	
 	public InteractionMode inteactionMode;
-	public SpriteRenderer resourceIcon;
+	//public SpriteRenderer resourceIcon;
 
-	public void breakDown()
+	public void BreakDown()
 	{
-		if(resourceReplacement)
+
 		GameObject.Instantiate (resourceReplacement, this.gameObject.transform.position, this.gameObject.transform.rotation);
 		GameObject.Destroy (this.gameObject);
 	}
 
-	public void pickUp()
+	public void PickUp()
 	{
-		print ("Theortically you now have this resource: " + objType.ToString ());
-		//resourceIcon.enabled = true;
+
 		GameObject.Destroy (this.gameObject);
 	}
-
 }
 
-public enum InteractionMode {Breakable, Harvestable, Pickupable}
+public enum InteractionMode {Uninteractable, Pickupable, Breakable, Harvestable}
 
-public enum ResourceObjType{None, LargeTree, LargeRock, SmallRock}
+public enum ResourceObjType{None, Wood, Stone}

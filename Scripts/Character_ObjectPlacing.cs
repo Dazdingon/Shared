@@ -52,6 +52,7 @@ public class Character_ObjectPlacing : MonoBehaviour {
 			
 			stats.input_Use = false;
 			placeableInstance.PlaceObject();
+			stats.inventoryResObj = ResourceObjType.None;
 		}
 	}
 	

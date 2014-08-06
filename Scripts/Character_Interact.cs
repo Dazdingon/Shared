@@ -18,10 +18,10 @@ public class Character_Interact : MonoBehaviour {
 		input_use = character.input_Use;
 		interactDistance = character.interactDistance;
 
-		HandleInteaction();	
+		InteactionHandler();	
 	}
 
-	private void HandleInteaction()
+	private void InteactionHandler()
 	{
 
 		if(castPositive)
@@ -35,12 +35,15 @@ public class Character_Interact : MonoBehaviour {
 					switch(resObj.inteactionMode)
 					{
 					case InteractionMode.Breakable:
-						resObj.breakDown();
+						resObj.BreakDown();
 						break;
 
 					case InteractionMode.Pickupable:
-						resObj.pickUp();
-						character.inventoryResObj = resObj.objType;
+						if(character.inventoryResObj == ResourceObjType.None){
+							
+							resObj.PickUp();
+							character.inventoryResObj = resObj.objType;
+						}
 						break;					
 					}
 				}
