@@ -15,6 +15,8 @@ ModelImporter:
     100018: Tree_Shifty
     100020: Tree_Shifty_Stump
     100022: Tree_Shifty_Top
+    100024: Stump_Cylinder
+    100026: WoodWall
     400000: //RootNode
     400002: Plant
     400004: Plant_Small
@@ -27,6 +29,8 @@ ModelImporter:
     400018: Tree_Shifty
     400020: Tree_Shifty_Stump
     400022: Tree_Shifty_Top
+    400024: Stump_Cylinder
+    400026: WoodWall
     2300000: Plant
     2300002: Plant_Small
     2300004: StructurePost
@@ -38,6 +42,8 @@ ModelImporter:
     2300016: Tree_Shifty
     2300018: Tree_Shifty_Stump
     2300020: Tree_Shifty_Top
+    2300022: Stump_Cylinder
+    2300024: WoodWall
     3300000: Plant
     3300002: Plant_Small
     3300004: StructurePost
@@ -49,6 +55,8 @@ ModelImporter:
     3300016: Tree_Shifty
     3300018: Tree_Shifty_Stump
     3300020: Tree_Shifty_Top
+    3300022: Stump_Cylinder
+    3300024: WoodWall
     4300000: Tree_Leaf_001
     4300002: StructurePost
     4300004: Tree_Palm
@@ -60,6 +68,8 @@ ModelImporter:
     4300016: Tree_Shifty_Top
     4300018: Tree_Shifty
     4300020: Tree_Shifty_Stump
+    4300022: WoodWall
+    4300024: Stump_Cylinder
     6400000: Plant
     6400002: Plant_Small
     6400004: StructurePost
@@ -70,6 +80,8 @@ ModelImporter:
     6400014: Tree_Shifty
     6400016: Tree_Shifty_Stump
     6400018: Tree_Shifty_Top
+    6400020: Stump_Cylinder
+    6400022: WoodWall
     7400000: Default Take
     9500000: //RootNode
     11100000: //RootNode
