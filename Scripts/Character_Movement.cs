@@ -46,7 +46,7 @@ public class Character_Movement : MonoBehaviour {
 		movement = Vector3.ClampMagnitude(stats.moveVector, 1f);
 		movement *= stats.moveSpeed;
 		
-		if(stats.input_Run){
+		if(stats.input_Run && stats.inventoryResObj == ResourceObjType.None){
 			
 			movement *= stats.runFactor;
 		}
