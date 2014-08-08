@@ -6,6 +6,7 @@ public class ResourceStats : MonoBehaviour {
 	public ResourceObjType objType;
 	public GameObject resourceReplacement;	
 	public InteractionMode inteactionMode;
+	public bool stackable = false;
 	//public SpriteRenderer resourceIcon;
 
 	public void BreakDown()
