@@ -10,6 +10,9 @@ ModelImporter:
     100008: RockRigid_Half2
     100010: RockRigid_Small
     100012: RockRigid_Whole
+    100014: RockPile1
+    100016: RockPile2
+    100018: RockPile3
     400000: //RootNode
     400002: Rock_Large
     400004: Rock_small
@@ -17,30 +20,45 @@ ModelImporter:
     400008: RockRigid_Half2
     400010: RockRigid_Small
     400012: RockRigid_Whole
+    400014: RockPile1
+    400016: RockPile2
+    400018: RockPile3
     2300000: Rock_Large
     2300002: Rock_small
     2300004: RockRigid_Half1
     2300006: RockRigid_Half2
     2300008: RockRigid_Small
     2300010: RockRigid_Whole
+    2300012: RockPile1
+    2300014: RockPile2
+    2300016: RockPile3
     3300000: Rock_Large
     3300002: Rock_small
     3300004: RockRigid_Half1
     3300006: RockRigid_Half2
     3300008: RockRigid_Small
     3300010: RockRigid_Whole
+    3300012: RockPile1
+    3300014: RockPile2
+    3300016: RockPile3
     4300000: RockRigid_Half1
     4300002: RockRigid_Half2
     4300004: RockRigid_Whole
     4300006: RockRigid_Small
     4300008: Rock_small
     4300010: Rock_Large
+    4300012: RockPile1
+    4300014: RockPile3
+    4300016: RockPile2
     6400000: Rock_Large
     6400002: Rock_small
     6400004: RockRigid_Half1
     6400006: RockRigid_Half2
     6400008: RockRigid_Small
     6400010: RockRigid_Whole
+    6400012: RockPile1
+    6400014: RockPile2
+    6400016: RockPile3
     7400000: Default Take
     9500000: //RootNode
   materials:
